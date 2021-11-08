@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/viacep.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <title>Registro</title>
+</head>
+
+<body>
+    <main>
+        <div class="formularios">
+            <form class="dados" id="data">
+                <h1>Dados</h1>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Nome completo" size="25" required>
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" placeholder="email@exemplo.com" size="25" pattern="/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i"  required>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" placeholder="Incluir maíusculas e números" size="25" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required><br>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="telefone" id="telefone" placeholder="(12) 99999-9999" required>
+            </form>
+            <section class="endereco">
+                <form method="get" action=".">
+                    <h1>Endereço</h1>
+                    <label>Cep:
+                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                            onblur="pesquisacep(this.value);" /></label><br />
+                    <label>Rua:
+                        <input name="rua" type="text" id="rua" size="40" /></label><br />
+                    <label>Bairro:
+                        <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+                    <label>Cidade:
+                        <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+                    <label>Estado:
+                        <input name="uf" type="text" id="uf" size="2" /></label><br />
+                    <label>
+                        <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+                </form>
+            </section>
+            <button type="submit" class="botao" form="data">
+                Enviar
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>
